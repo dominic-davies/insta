@@ -1,17 +1,23 @@
 <div class="container mt-5" style="height: 100vh;">
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <div class="d-flex h-100 flex-row justify-content-center flex-wrap align-items-start">
         <%# Left side %>
         <div class="col-lg-6 col-md-6 p-2 mt-5">
-            <%= image_tag ('iphone.png'), class: 'img-responsive', style: "width: 500px;" %>
+            <%= image_tag ('iphone.png'), class: 'img-responsive', style: "width: 100%;" %>
         </div>
         <%# Right side %>
         <div class="col-lg-5 col-md-6 p-3 mt-3">
-            <div class="card text-center">
-                <h1>InstaClone</h1>
-                <%= render 'devise/registrations/signup' %>
+            <div class="card p-4 text-center mb-3">
+                <div class="card-body">
+                    <h1 class="mb-3">instaclone</h1>
+                    <p>Sign up to see photos and videos from your friends.</p>
+                    <%= render 'devise/registrations/signup' %>
+                </div>
             </div>
             <div class="card text-center">
-                <p>Already have an account? Sign In</p>
+                <div class="card-body">
+                    <p>Already have an account? <%= link_to 'Sign In', landing_signin_path %>  </p>
+                </div>
             </div>
         </div>      
     </div>
